@@ -1,0 +1,32 @@
+-- I'm using Airbnb listings for Bristol City in England 
+--1. The most expensive listing in Bristol is called Cozy room in Bristol and costs 7500 USD
+
+SELECT 
+	name,
+	price
+FROM 
+	bristol_listings
+ORDER BY price DESC 
+
+-- Other facts 
+--There are 2073 listings and 1473 hosts in Bristol city   
+
+SELECT 
+	COUNT(DISTINCT host_id) AS number_of_hosts,
+	COUNT(DISTINCT id) AS number_of_listings
+FROM 
+	bristol_listings
+  
+-- 2. What neighborhoods seem to be the most popular?
+-- I used the number of reviews as a measure of popularity which means Windmill hill is the most popular neighbourhood for listings in Bristol
+
+SELECT 
+	neighbourhood,
+	number_of_reviews
+FROM 
+	bristol_listings
+ORDER BY number_of_reviews DESC
+
+
+-- 3. What time of year is the cheapest time to go to your city? What about the busiest?
+--unfortunately the data set I choose doesn't have time columns to answer the question 
